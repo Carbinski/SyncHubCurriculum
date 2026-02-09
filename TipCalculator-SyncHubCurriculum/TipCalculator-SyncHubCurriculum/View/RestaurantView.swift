@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct RestaurantView: View {
-    // MARK: - Connecting to ViewModel
+    // MARK: - Connecting to ViewModel, proper visibility
     @StateObject private var viewModel = RestaurantViewModel()
     @State private var currentTip: Double = 0.0
 

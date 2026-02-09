@@ -21,7 +21,7 @@ class RestaurantViewModel: ObservableObject {
     // MARK: - FIXED No Magic Numbers, Comment explains WHY (Gas costs), Function is well named and documented
     /// Calculates tip based on the restaurant's rules.
     /// - Returns: The calculated tip amount as a Double.
-    func calculateTip() -> Double {
+    internal func calculateTip() -> Double {
         let minimumTipThreshold = 20.0
         let minimumTipAmount = 5.0
 
@@ -36,7 +36,7 @@ class RestaurantViewModel: ObservableObject {
     
     // MARK: - FIXED Uses ViewModel to update the Model
     /// Adds the current calculated tip to the bill total.
-    func applyTipToBill() {
+    internal func applyTipToBill() {
         let tip = calculateTip()
         restaurant.totalRevenue += restaurant.billAmount + tip
         

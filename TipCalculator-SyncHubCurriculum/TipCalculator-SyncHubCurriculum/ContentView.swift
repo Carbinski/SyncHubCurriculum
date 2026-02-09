@@ -10,11 +10,11 @@ import UIKit
 import Foundation
 
 struct ContentView: View {
-    // MARK: - BAD PRACTICE: Vague Variable Names
-    @State private var p: Int = 1
-    @State private var t: Int = 15
-    @State private var a: Double = 0.0
-    @State private var tip: Double = 0.0
+    // MARK: - BAD PRACTICE: Vague Variable Names, Visibility
+    @State public var p: Int = 1
+    @State public var t: Int = 15
+    @State internal var a: Double = 0.0
+    @State fileprivate var tip: Double = 0.0
     // MARK: - BAD PRACTICE: Storing information about restaurant in view, poor naming convention
     var RestaurantName: String = "Steven's Kitchen"
     @State var Total: Double = 0.0
@@ -80,8 +80,8 @@ struct ContentView: View {
 }
 
 // MARK: - BAD PRACTICE: Non-Descriptive Function Name & Magic Numbers
-func t_calculate(b: Double, t: Int) -> Double {
-    var t_double = Double(t) / 100.0
+public func t_calculate(b: Double, t: Int) -> Double {
+    let t_double = Double(t) / 100.0
     
     if b > 20 {
         return b * t_double
