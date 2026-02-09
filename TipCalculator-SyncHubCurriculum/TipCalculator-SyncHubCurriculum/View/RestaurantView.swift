@@ -53,6 +53,7 @@ struct RestaurantView: View {
             Button("Add Tip to Bill") {
                 // MARK: - Using ViewModel to write to Model
                 viewModel.applyTipToBill()
+                currentTip = 0.0
             }
             .padding(16)
             .background(
